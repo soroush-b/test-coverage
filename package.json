@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "test-ci": "jest --config config.json --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test-ci": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "react": "16.13.1",
