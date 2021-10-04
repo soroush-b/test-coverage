@@ -3,6 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import AddList from './components/AddList';
 import ItemsList from './components/ItemsList';
 import Error from './components/ErrorComponent';
+import Checkbox from './components/checkbox';
 
 export default function App() {
   const [listInput, setListInput] = useState('');
@@ -45,6 +46,7 @@ export default function App() {
       <View style={styles.listArea}>
         <ItemsList data={list} onDelete={handleDelete} />
         <Error visible={error}>Please insert a valid text</Error>
+        <Checkbox title="checkbox title" />
       </View>
     </View>
   );
