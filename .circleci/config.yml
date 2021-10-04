@@ -11,23 +11,23 @@ jobs:
       DATABASE_URL: process.env.DATABASE_URL_TEST
     steps:
       - checkout
-      - run: npm install
+      - run: yarn install
       # - run: npm test
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm-wee
-          command: npm install
+          command: yarn install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run: # run tests
           name: test
-          command: npm run test
+          command: yarn jest
       - run: # run code coverage report
           name: code-coverage
-          command: npm run coverage
+          command: yarn jest --coverage
       - coveralls/upload
       - store_artifacts: # special step to save test results as as artifact
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
