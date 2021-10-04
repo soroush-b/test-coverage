@@ -10,18 +10,18 @@ it('renders correctly', () => {
   renderer.create(<App />);
 });
 
-it('Should create an item', () => {
-  const {getByText, getByPlaceholderText} = render(<App />);
+// it('Should create an item', () => {
+//   const {getByText, getByPlaceholderText} = render(<App />);
 
-  const textInput = getByPlaceholderText('Write something');
-  const addItemButton = getByText('+');
+//   const textInput = getByPlaceholderText('Write something');
+//   const addItemButton = getByText('+');
 
-  const createdItemText = 'first todo';
+//   const createdItemText = 'first todo';
 
-  fireEvent.changeText(textInput, createdItemText);
-  fireEvent.press(addItemButton);
+//   fireEvent.changeText(textInput, createdItemText);
+//   fireEvent.press(addItemButton);
 
-  const createdItem = getByText(createdItemText);
+//   const createdItem = getByText(createdItemText);
 
-  expect(createdItem).not.toBeNull();
-});
+//   expect(createdItem).not.toBeNull();
+// });
