@@ -24,7 +24,7 @@ const Checkbox = ({title}) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text>{title}</Text>
+        <Text>checkbox title: {title}</Text>
         {
           <Text style={[styles.title, checked && styles.checked]}>
             {checked ? 'Checked' : 'Not Checked'}
